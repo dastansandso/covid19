@@ -1,0 +1,199 @@
+/*
+Author Dhiraj
+*/
+#main {
+    background: url('../images/homepage/pagebg.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.feature-boxes .card {
+    height: 100%;
+}
+
+.feature-boxes .card p,.feature-boxes .card h4 {
+    margin-bottom: 0;
+}
+
+.feature-boxes .card i {
+    font-size: 1.7em;
+    margin: 10px;
+    color: #ffffff;
+}
+
+.feature-boxes .card p,
+.feature-boxes .card h4 {
+    color: #ffffff;
+}
+
+.feature-boxes .card h4 .small-text {
+    font-size: 10px;
+    color: initial;
+}
+
+.overlay-effect:before,.overlay-effect:after {
+    content: "";
+    position: relative;
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 5px solid #034ea1;
+}
+
+figure.overlay-effect {
+    width: 100%;
+    position: relative;
+    padding-top: 3%;
+    padding-left: 3%;
+}
+
+figure.overlay-effect img {
+    position: relative;
+    z-index: 9;
+    width: 100%;
+}
+
+/*Building selection*/
+.building {
+    width: 62%;
+    margin: 0 auto;
+}
+
+.building-grid img {
+    transition-duration: 0.6s;
+    cursor: pointer;
+}
+
+.building-grid img:hover {
+    opacity: 0.5;
+}
+
+#floor .floornum span {
+    position: absolute;
+    left: -18%;
+    top: 3px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#floor .floornum {
+    position: relative;
+}
+
+#floor .floornum img.disabled,#floor .floornum img:hover {
+    background: #ffc000;
+}
+
+/*loader*/
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+#loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #034ea1;
+    z-index: 1001;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+#loader:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #ec7224;
+    -webkit-animation: spin 3s linear infinite;
+    animation: spin 3s linear infinite;
+}
+
+#loader:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    left: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #0088cf;
+    -webkit-animation: spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite;
+}
+
+#loader-wrapper .loader-section {
+    position: fixed;
+    top: 0;
+    width: 51%;
+    height: 100%;
+    background: #fff;
+    z-index: 1000;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+
+#loader-wrapper .loader-section.section-left {
+    left: 0;
+}
+
+#loader-wrapper .loader-section.section-right {
+    right: 0;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loaded #loader-wrapper .loader-section.section-left {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.loaded #loader-wrapper .loader-section.section-right {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.loaded #loader {
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.loaded #loader-wrapper {
+    /* visibility: hidden; */
+    /* -webkit-transform: translateY(-100%); */
+    /* transform: translateY(-100%); */
+    /* -webkit-transition: all 0.3s 1s ease-out; */
+    /* transition: all 0.3s 1s ease-out; */
+}
